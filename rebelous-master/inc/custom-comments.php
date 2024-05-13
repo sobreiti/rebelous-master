@@ -2,19 +2,19 @@
 /**
  * Callback for custom comments
  *
- * @package Relativity
+ * @package rebelous
  */
 
 /**
  * Builds the custom markup for our comments template
  *
- * @package Relativity
+ * @package rebelous
  * @see http://codex.wordpress.org/Function_Reference/
  * @param object $comment the current commrnt object.
  * @param array  $args The arguments array.
  * @param int    $depth depth of comment thread.
  */
-function relativity_custom_comments( $comment, $args, $depth ) {
+function rebelous_custom_comments( $comment, $args, $depth ) {
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' : ?>

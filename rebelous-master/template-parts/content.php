@@ -2,7 +2,7 @@
 /**
  * This is the default content template
  *
- * @package Relativity
+ * @package rebelous
  */
 
 ?>
@@ -19,7 +19,7 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php relativity_posted_on(); ?>
+					<?php rebelous_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
@@ -28,21 +28,21 @@
 			<?php
 				/* translators: %s: Name of current post */
 				the_content( sprintf(
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'relativity' ), array( 'span' => array( 'class' => array() ) ) ),
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'rebelous' ), array( 'span' => array( 'class' => array() ) ) ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				) );
 			?>
 
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'relativity' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rebelous' ),
 					'after'  => '</div>',
 				) );
 			?>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php relativity_entry_footer(); ?>
+			<?php rebelous_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-## -->

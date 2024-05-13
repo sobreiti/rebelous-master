@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Relativity
+ * @package rebelous
  */
 
 ?><!DOCTYPE html>
@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'relativity' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebelous' ); ?></a>
 
 	<?php if ( '' != get_theme_mod( 'header_image' ) ): ?>
 		<header id="masthead" class="site-header has-header-image" role="banner" style="background-image: url(<?php echo get_header_image()?>)">
@@ -30,7 +30,7 @@
 		<div class="site-branding">
 			<div class="container">
 
-				<?php	relativity_the_custom_logo() ?>
+				<?php	rebelous_the_custom_logo() ?>
 
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -40,7 +40,7 @@
 		<?php if ( function_exists( 'jetpack_social_menu' ) ) jetpack_social_menu(); ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'relativity' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'rebelous' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'primary-menu-container' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

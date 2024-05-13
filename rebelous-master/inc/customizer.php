@@ -1,8 +1,8 @@
 <?php
 /**
- * Relativity Theme Customizer
+ * rebelous Theme Customizer
  *
- * @package Relativity
+ * @package rebelous
  */
 
 /**
@@ -10,22 +10,22 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function relativity_customize_register( $wp_customize ) {
+function rebelous_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'relativity_customize_register' );
+add_action( 'customize_register', 'rebelous_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function relativity_customize_preview_js() {
-	wp_enqueue_script( 'relativity_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function rebelous_customize_preview_js() {
+	wp_enqueue_script( 'rebelous_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'relativity_customize_preview_js' );
+add_action( 'customize_preview_init', 'rebelous_customize_preview_js' );
 
-add_action( 'customize_register', 'relativity_register_color_scheme_customizer' );
+add_action( 'customize_register', 'rebelous_register_color_scheme_customizer' );
 
 /**
  * Adding our colour scheme setting and control
@@ -34,19 +34,19 @@ add_action( 'customize_register', 'relativity_register_color_scheme_customizer' 
  * @param	WP_Customize_Manager $wp_customize the wp_customize object.
  * @return	void
  */
-function relativity_register_color_scheme_customizer( WP_Customize_Manager $wp_customize ) {
+function rebelous_register_color_scheme_customizer( WP_Customize_Manager $wp_customize ) {
 
-	$schemes	= relativity_get_color_schemes();
+	$schemes	= rebelous_get_color_schemes();
 	$section	= 'colors';
-	$key		= 'relativity_color_scheme';
-	$title		= __( 'Color scheme', 'relativity' );
+	$key		= 'rebelous_color_scheme';
+	$title		= __( 'Color scheme', 'rebelous' );
 
 	$wp_customize->add_setting(
 		$key,
 		array(
 			'default' => 'default',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'relativity_sanitize_color',
+			'sanitize_callback' => 'rebelous_sanitize_color',
 		)
 	);
 
@@ -67,8 +67,8 @@ function relativity_register_color_scheme_customizer( WP_Customize_Manager $wp_c
  *
  * @param string $value Value of color scheme theme mod.
  */
-function relativity_sanitize_color( $value ) {
-	if ( ! array_key_exists( $value, relativity_get_color_schemes() ) ) {
+function rebelous_sanitize_color( $value ) {
+	if ( ! array_key_exists( $value, rebelous_get_color_schemes() ) ) {
 		$value = 'default';
 	}
 
@@ -78,36 +78,36 @@ function relativity_sanitize_color( $value ) {
 /**
  * Get color schemes. You can filter this in your child theme.
  *
- * @return-filter	relativity_get_color_schemes
+ * @return-filter	rebelous_get_color_schemes
  * @return			Array
  */
-function relativity_get_color_schemes() {
+function rebelous_get_color_schemes() {
 
 	$schemes = array(
-		'default' => __( 'Default', 'relativity' ),
-		'blue' => __( 'Blue', 'relativity' ),
-		'red' => __( 'Red', 'relativity' ),
-		'green' => __( 'Green', 'relativity' ),
-		'teal' => __( 'Teal', 'relativity' ),
+		'default' => __( 'Default', 'rebelous' ),
+		'blue' => __( 'Blue', 'rebelous' ),
+		'red' => __( 'Red', 'rebelous' ),
+		'green' => __( 'Green', 'rebelous' ),
+		'teal' => __( 'Teal', 'rebelous' ),
 	);
 
-	return apply_filters( 'relativity_get_color_schemes', $schemes );
+	return apply_filters( 'rebelous_get_color_schemes', $schemes );
 }
 
-add_filter( 'body_class', 'relativity_filter_body_class_add_colorscheme' );
+add_filter( 'body_class', 'rebelous_filter_body_class_add_colorscheme' );
 
 /**
  * Adding our color scheme to the body-classes
  *
  * @wp-hook	body_class
- * @uses	get_theme_mod, relativity_get_color_schemes
+ * @uses	get_theme_mod, rebelous_get_color_schemes
  * @param	Array $classes the default body classes.
  * @return	Array $classes
  */
-function relativity_filter_body_class_add_colorscheme( Array $classes ) {
+function rebelous_filter_body_class_add_colorscheme( Array $classes ) {
 
-	$scheme		= get_theme_mod( 'relativity_color_scheme' ) ? get_theme_mod( 'relativity_color_scheme' ) : 'default' ;
-	$schemes	= relativity_get_color_schemes();
+	$scheme		= get_theme_mod( 'rebelous_color_scheme' ) ? get_theme_mod( 'rebelous_color_scheme' ) : 'default' ;
+	$schemes	= rebelous_get_color_schemes();
 
 	if ( empty( $schemes ) || ! array_key_exists( $scheme, $schemes ) ) {
 		$scheme = 'default';

@@ -11,28 +11,28 @@
 	</a>
 	<?php endif; // End header image check. ?>
  *
- * @package Relativity
+ * @package rebelous
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses relativity_get_default_header_image()
+ * @uses rebelous_get_default_header_image()
  */
-function relativity_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'relativity_custom_header_args', array(
+function rebelous_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'rebelous_custom_header_args', array(
 		'width'                  => 2000,
 		'height'                 => 500,
 		'flex-height'            => true,
 		'flex-width'             => true,
 	) ) );
 }
-add_action( 'after_setup_theme', 'relativity_custom_header_setup' );
+add_action( 'after_setup_theme', 'rebelous_custom_header_setup' );
 
 /**
  * Implement the Custom Avatar Header feature.
  */
-function relativity_get_default_header_image() {
+function rebelous_get_default_header_image() {
 
 	// Get default from Discussion Settings.
 	$default = get_option( 'avatar_default', 'mystery' ); // Mystery man default.
@@ -50,11 +50,11 @@ function relativity_get_default_header_image() {
 	), $url );
 
 	return esc_url_raw( $url );
-} // relativity_get_default_header_image
+} // rebelous_get_default_header_image
 
 /* Reimplement gravatar header with custom logo, and use header image as background. */
 
-function relativity_custom_logo_setup() {
+function rebelous_custom_logo_setup() {
 
 	add_theme_support( 'custom-logo', array(
 		'height'      => 150,
@@ -64,21 +64,21 @@ function relativity_custom_logo_setup() {
 	) );
 
 }
-add_action( 'after_setup_theme', 'relativity_custom_logo_setup' );
+add_action( 'after_setup_theme', 'rebelous_custom_logo_setup' );
 
-function relativity_default_theme_logo() {
+function rebelous_default_theme_logo() {
 
 	$html = '<a class="site-logo" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" href="'. esc_url( home_url( '/' ) ) .'" rel="home">';
-	$html .= '<img class="no-grav header-image" alt="" src="'. relativity_get_default_header_image() .'" width="150" height="150" /></a>';
+	$html .= '<img class="no-grav header-image" alt="" src="'. rebelous_get_default_header_image() .'" width="150" height="150" /></a>';
 	echo $html;
 }
 
-function relativity_the_custom_logo() {
+function rebelous_the_custom_logo() {
 
 	if ( has_custom_logo() ) {
 		the_custom_logo();
 	} else {
-		relativity_default_theme_logo();
+		rebelous_default_theme_logo();
 	}
 
 }

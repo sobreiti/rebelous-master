@@ -3,26 +3,26 @@
  * Jetpack Compatibility File
  * See: https://jetpack.me/
  *
- * @package Relativity
+ * @package rebelous
  */
 
 /**
  * Add theme support for Infinite Scroll.
  *
- * @package Relativity
+ * @package rebelous
  * @see: https://jetpack.me/support/infinite-scroll/
  */
-function relativity_jetpack_setup() {
+function rebelous_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'relativity_infinite_scroll_render',
+		'render'    => 'rebelous_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
 	/**
 	 * Add theme support for Content Options.
 	 *
-	 * @package Relativity
+	 * @package rebelous
 	 * @see: https://jetpack.com/support/content-options/
 	 */
 	add_theme_support( 'jetpack-content-options', array(
@@ -30,7 +30,7 @@ function relativity_jetpack_setup() {
 	  'author-bio'         => true, // display or not the author bio: true or false.
 	  'author-bio-default' => false, // the default setting of the author bio, if it's being displayed or not: true or false (only required if false).
 	  'post-details'       => array(
-	    'stylesheet'      => 'relativity-style', // name of the theme's stylesheet.
+	    'stylesheet'      => 'rebelous-style', // name of the theme's stylesheet.
 	    'date'            => '.posted-on', // a CSS selector matching the elements that display the post date.
 	    'categories'      => '.cat-links', // a CSS selector matching the elements that display the post categories.
 	    'tags'            => '.tags-links', // a CSS selector matching the elements that display the post tags.
@@ -50,27 +50,27 @@ function relativity_jetpack_setup() {
 	/**
 	 * Add theme support for Social menu.
 	 *
-	 * @package Relativity
+	 * @package rebelous
 	 * @see: https://jetpack.com/support/social-menu/
 	 */
 
 	add_theme_support( 'jetpack-social-menu' );
 	
-} // end function relativity_jetpack_setup
-add_action( 'after_setup_theme', 'relativity_jetpack_setup' );
+} // end function rebelous_jetpack_setup
+add_action( 'after_setup_theme', 'rebelous_jetpack_setup' );
 
 /**
  * Function to render more posts for infinite scroll.
  *
- * @package Relativity
+ * @package rebelous
  * @see: https://jetpack.me/support/infinite-scroll/
  */
-function relativity_infinite_scroll_render() {
+function rebelous_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'template-parts/content', get_post_format() );
 	}
-} // end function relativity_infinite_scroll_render
+} // end function rebelous_infinite_scroll_render
 
 /**
  * Author Bio Avatar Size.

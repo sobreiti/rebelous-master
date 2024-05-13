@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Relativity
+ * @package rebelous
  */
 
 get_header(); ?>

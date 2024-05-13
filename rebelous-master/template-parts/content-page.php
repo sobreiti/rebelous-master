@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Relativity
+ * @package rebelous
  */
 
 ?>
@@ -22,14 +22,14 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'relativity' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rebelous' ),
 					'after'  => '</div>',
 				) );
 			?>
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php edit_post_link( esc_html__( 'Edit', 'relativity' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( esc_html__( 'Edit', 'rebelous' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-## -->

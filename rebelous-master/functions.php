@@ -1,11 +1,11 @@
 <?php
 /**
- * Relativity functions and definitions
+ * rebelous functions and definitions
  *
- * @package Relativity
+ * @package rebelous
  */
 
-if ( ! function_exists( 'relativity_setup' ) ) :
+if ( ! function_exists( 'rebelous_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -13,14 +13,14 @@ if ( ! function_exists( 'relativity_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function relativity_setup() {
+	function rebelous_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Relativity, use a find and replace
-		 * to change 'relativity' to the name of your theme in all the template files
+		 * If you're building a theme based on rebelous, use a find and replace
+		 * to change 'rebelous' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'relativity', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'rebelous', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -42,7 +42,7 @@ if ( ! function_exists( 'relativity_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'relativity' ),
+			'primary' => esc_html__( 'Primary Menu', 'rebelous' ),
 		) );
 
 		/*
@@ -70,7 +70,7 @@ if ( ! function_exists( 'relativity_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'relativity_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'rebelous_custom_background_args', array(
 			'default-color' => 'efefef',
 			'default-image' => '',
 		) ) );
@@ -93,52 +93,52 @@ if ( ! function_exists( 'relativity_setup' ) ) :
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name' => __( 'Teal', 'relativity' ),
+				'name' => __( 'Teal', 'rebelous' ),
 				'slug' => 'teal',
 				'color' => '#00796b',
 			),
 			array(
-				'name' => __( 'Light Teal', 'relativity' ),
+				'name' => __( 'Light Teal', 'rebelous' ),
 				'slug' => 'light-teal',
 				'color' => '#009688',
 			),
 			array(
-				'name' => __( 'Blue', 'relativity' ),
+				'name' => __( 'Blue', 'rebelous' ),
 				'slug' => 'blue',
 				'color' => '#1976d2',
 			),
 			array(
-				'name' => __( 'Light Blue', 'relativity' ),
+				'name' => __( 'Light Blue', 'rebelous' ),
 				'slug' => 'light-blue',
 				'color' => '#2196f3',
 			),
 			array(
-				'name' => __( 'Green', 'relativity' ),
+				'name' => __( 'Green', 'rebelous' ),
 				'slug' => 'green',
 				'color' => '#388e3c',
 			),
 			array(
-				'name' => __( 'Light Green', 'relativity' ),
+				'name' => __( 'Light Green', 'rebelous' ),
 				'slug' => 'light-green',
 				'color' => '#4caf50',
 			),
 			array(
-				'name' => __( 'Red', 'relativity' ),
+				'name' => __( 'Red', 'rebelous' ),
 				'slug' => 'red',
 				'color' => '#d32f2f',
 			),
 			array(
-				'name' => __( 'Light Red', 'relativity' ),
+				'name' => __( 'Light Red', 'rebelous' ),
 				'slug' => 'light-red',
 				'color' => '#f44336',
 			),
 			array(
-				'name' => __( 'Off White', 'relativity' ),
+				'name' => __( 'Off White', 'rebelous' ),
 				'slug' => 'off-white',
 				'color' => '#fafafa',
 			),
 			array(
-				'name' => __( 'Light Black', 'relativity' ),
+				'name' => __( 'Light Black', 'rebelous' ),
 				'slug' => 'light-black',
 				'color' => '#2d2d2d',
 			),
@@ -146,8 +146,8 @@ if ( ! function_exists( 'relativity_setup' ) ) :
 
 		add_theme_support( 'responsive-embeds' );	
 	}
-endif; // End relativity_setup.
-add_action( 'after_setup_theme', 'relativity_setup' );
+endif; // End rebelous_setup.
+add_action( 'after_setup_theme', 'rebelous_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -156,22 +156,22 @@ add_action( 'after_setup_theme', 'relativity_setup' );
  *
  * @global int $content_width
  */
-function relativity_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'relativity_content_width', 760 );
+function rebelous_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'rebelous_content_width', 760 );
 	if ( ! isset( $content_width ) ) {
 		$content_width = 760;
 	}
 }
-add_action( 'after_setup_theme', 'relativity_content_width', 0 );
+add_action( 'after_setup_theme', 'rebelous_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function relativity_widgets_init() {
+function rebelous_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widget Area 1', 'relativity' ),
+		'name'          => esc_html__( 'Footer Widget Area 1', 'rebelous' ),
 		'id'            => 'footer-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -181,7 +181,7 @@ function relativity_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widget Area 2', 'relativity' ),
+		'name'          => esc_html__( 'Footer Widget Area 2', 'rebelous' ),
 		'id'            => 'footer-2',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -190,25 +190,25 @@ function relativity_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'relativity_widgets_init' );
+add_action( 'widgets_init', 'rebelous_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function relativity_scripts() {
-	wp_enqueue_style( 'relativity-style', get_stylesheet_uri() );
+function rebelous_scripts() {
+	wp_enqueue_style( 'rebelous-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'relativity-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'rebelous-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'relativity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'rebelous-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_style( 'relativity-googlefonts', '//fonts.googleapis.com/css?family=Vollkorn:400|Open+Sans:300,400,700' );
+	wp_enqueue_style( 'rebelous-googlefonts', '//fonts.googleapis.com/css?family=Vollkorn:400|Open+Sans:300,400,700' );
 }
-add_action( 'wp_enqueue_scripts', 'relativity_scripts' );
+add_action( 'wp_enqueue_scripts', 'rebelous_scripts' );
 
 /**
  * Implement the Custom Header feature.

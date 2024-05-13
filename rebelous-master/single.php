@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Relativity
+ * @package rebelous
  */
 
 get_header(); ?>

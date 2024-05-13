@@ -2,7 +2,7 @@
 /**
  * The template used for displaying post content in single.php
  *
- * @package Relativity
+ * @package rebelous
  */
 
 ?>
@@ -18,7 +18,7 @@
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 			<div class="entry-meta">
-				<?php relativity_posted_on(); ?>
+				<?php rebelous_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
@@ -26,7 +26,7 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'relativity' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rebelous' ),
 					'after'  => '</div>',
 				) );
 			?>
@@ -35,7 +35,7 @@
 		<?php if ( function_exists( 'jetpack_author_bio' ) ) jetpack_author_bio(); ?>
 
 		<footer class="entry-footer">
-			<?php relativity_entry_footer(); ?>
+			<?php rebelous_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div>
 </article><!-- #post-## -->
